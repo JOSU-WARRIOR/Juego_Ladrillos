@@ -22,6 +22,7 @@ class Director:
             for evento in eventos:
                 if evento.type == pygame.QUIT:
                     jugando = False
+                    self.escena_actual.jugando = False
 
             self.escena_actual.leer_eventos(eventos)
             self.escena_actual.actualizar()
