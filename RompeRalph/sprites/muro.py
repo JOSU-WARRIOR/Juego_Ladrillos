@@ -4,14 +4,8 @@ from sprites.ladrillo import Ladrillo
 from constantes import ANCHO, ALTO
 
 class Muro(pygame.sprite.Group):
-    def __init__(self, cantidadLadrillos):
+   def __init__(self, disposiciones):
         super().__init__()
-        pos_x = 0
-        pos_y = 20
-        for i in range(cantidadLadrillos):
-            ladrillo = Ladrillo((pos_x, pos_y))
+        for pos in disposiciones:
+            ladrillo = Ladrillo(pos)
             self.add(ladrillo)
-            pos_x += ladrillo.rect.width
-            if pos_x >= ANCHO:
-                pos_x = 0
-                pos_y += ladrillo.rect.height

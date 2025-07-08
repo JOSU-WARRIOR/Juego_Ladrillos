@@ -1,12 +1,13 @@
 from sprites.muro import Muro
+from muros.Nivel_1 import muro_lineal
+from muros.Nivel_2 import muro_rombo   
+from muros.Nivel_3 import muro_escalera
 
 def cargar_muro(nombre):
     if nombre == "Nivel1":
-        return Muro(40)
+        return Muro(muro_lineal())
     elif nombre == "Nivel2":
-        return Muro(50)
+        return Muro(muro_rombo())
     elif nombre == "Nivel3":
-        return Muro(60)
-    else:
-        return Muro(20)
-
+        return Muro(muro_escalera())
+   
