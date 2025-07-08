@@ -5,7 +5,7 @@ from constantes import ANCHO, ALTO, color_blanco, color_azul
 class Bolita(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('imagenes/bolita.png')
+        self.image = pygame.image.load('juego_clases/imagenes/bolita.png')
         self.rect = self.image.get_rect()
         self.rect.centerx = ANCHO / 2
         self.rect.centery = ALTO / 2
