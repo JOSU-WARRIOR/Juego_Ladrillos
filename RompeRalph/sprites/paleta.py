@@ -5,7 +5,7 @@ from constantes import ANCHO, ALTO, color_blanco, color_azul
 class Paleta(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('juego_clases/imagenes/paleta.png')
+        self.image = pygame.image.load('RompeRalph/imagenes/paleta.png')
         self.rect = self.image.get_rect()
         self.rect.midbottom = (ANCHO / 2, ALTO - 20)
         self.speed = [0, 0]
