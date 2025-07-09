@@ -40,7 +40,15 @@ class EscenaNivel(Escena):
 
         lista = pygame.sprite.spritecollide(self.bolita, self.muro, False)
         if lista:
-            self.muro.remove(lista[0])
+            #self.muro.remove(lista[0])
+            #self.puntuacion += 10
+            ladrillo = lista[0]
+            cx = self.bolita.rect.centerx
+            if cx < ladrillo.rect.left or cx > ladrillo.rect.right:
+                self.bolita.speed[0] = -self.bolita.speed[0]
+            else:
+                self.bolita.speed[1] = -self.bolita.speed[1]
+            self.muro.remove(ladrillo)
             self.puntuacion += 10
 
         if self.bolita.rect.top > ALTO:
