@@ -60,9 +60,12 @@ class EscenaNivel(Escena):
 
         if len(self.muro) == 0:
             EstadoJuego.nivel = self.nivel + 1
-            EstadoJuego.puntuacion = self.puntuacion + 50
-            EstadoJuego.vidas = self.vidas + 1
-            self.cambiar_escena(f'Nivel{EstadoJuego.nivel}')
+            if self.nivel == 4:
+                self.cambiar_escena("Fin")
+            else:                
+                EstadoJuego.puntuacion = self.puntuacion + 50
+                EstadoJuego.vidas = self.vidas + 1
+                self.cambiar_escena(f'Nivel{EstadoJuego.nivel}')
 
     def dibujar(self, pantalla):
         pantalla.fill(color_azul)

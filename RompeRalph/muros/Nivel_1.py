@@ -1,4 +1,4 @@
-from constantes import ANCHO, ALTO
+from constantes import ANCHO, ALTO, cantidad
 from sprites.ladrillo import Ladrillo
 from sprites.muro import Muro
 
@@ -6,7 +6,7 @@ def muro_lineal():
     ladrillo = Ladrillo((0, 0))  # Solo para obtener ancho y alto
     w = ladrillo.rect.width
     h = ladrillo.rect.height
-    cantidad = 50  # Número fijo de ladrillos
+    #cantidad = 50  # Número fijo de ladrillos metido ya en constantes.py
     posiciones = []
 
     pos_x, pos_y = 0, 20
