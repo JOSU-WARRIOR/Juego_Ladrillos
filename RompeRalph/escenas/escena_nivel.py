@@ -18,6 +18,15 @@ class EscenaNivel(Escena):
         self.esperando_saque = True
         pygame.key.set_repeat(30)
 
+        # 🎵 Cargar música de fondo para el nivel
+        try:
+            pygame.mixer.music.stop()
+            ruta_musica = f"RompeRalph/musica/nivel{nivel}.ogg"
+            pygame.mixer.music.load(ruta_musica)
+            pygame.mixer.music.play(-1)  # Repetir en bucle
+        except Exception as e:
+            print(f"[AVISO] No se pudo cargar la música del nivel {nivel}: {e}")
+
     def leer_eventos(self, eventos):
         for evento in eventos:
             if evento.type == pygame.KEYDOWN:
@@ -61,6 +70,7 @@ class EscenaNivel(Escena):
         if len(self.muro) == 0:
             EstadoJuego.nivel = self.nivel + 1
             if self.nivel == 4:
+                pygame.mixer.music.stop()  # Parar música antes de salir
                 self.cambiar_escena("Fin")
             else:                
                 EstadoJuego.puntuacion = self.puntuacion + 50

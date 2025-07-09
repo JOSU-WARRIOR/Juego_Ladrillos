@@ -1,4 +1,8 @@
 # main.py
+import pygame
+pygame.init()
+pygame.mixer.init()
+
 from director import Director
 from escenas.pantallaInicio import EscenaInicio
 from escenas.escena_nivel import EscenaNivel
@@ -6,6 +10,7 @@ from escenas.juego_terminado import EscenaJuegoTerminado
 from escenas.escena_fin import EscenaFin
 from estado_juego import EstadoJuego
 from constantes import ANCHO, ALTO
+
 
 # Mapeo de escenas para el director
 escenas_disponibles = {
